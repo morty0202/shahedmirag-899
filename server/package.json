@@ -1,0 +1,20 @@
+{
+  "name": "meraj-signaling-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed": "node seed.mjs",
+    "seed:db": "node seed-db.mjs",
+    "start": "node server.mjs",
+    "start:signal": "node index.mjs",
+    "test": "node _smoke-test.mjs && node _run-signal-test.mjs",
+    "test:flow": "node _run-signal-test.mjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^4.22.2",
+    "mime": "^1.6.0",
+    "sql.js": "^1.14.2",
+    "ws": "^8.18.0"
+  }
+}

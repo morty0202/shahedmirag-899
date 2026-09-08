@@ -1,0 +1,20 @@
+{
+  "amir": {
+    "userId": "3cde78df-334f-4ced-a924-ced0330c05c3",
+    "name": "امیر نجفی",
+    "role": "student",
+    "hash": "pbkdf2$120000$37677ae1a1d0f9cfdb6e7cd2dedce8e2$8107215f19af809b820d7fe25ab29c517eeb1e752d88f599dee6805326563063"
+  },
+  "ahmadi": {
+    "userId": "fd998fbe-5271-4647-8e35-9de5bbc765c7",
+    "name": "رضا احمدی",
+    "role": "teacher",
+    "hash": "pbkdf2$120000$19e904e3f01bc18e983dcaf1eda87b15$d1d0a15a02082ae5f2a8839f21327f894bf8d8bad07b54576104ccce620d16fe"
+  },
+  "admin": {
+    "userId": "ff085f1e-6dd6-4d5f-8fcf-b28ecf9ea6a4",
+    "name": "مدیر مدرسه",
+    "role": "admin",
+    "hash": "pbkdf2$120000$cbb1bc7e53ceaa229e8e4f6ee273eb23$b18d460ccae66d1a285dacc8593b898b1d29f0491cc24c55671ce1c4593b507f"
+  }
+}

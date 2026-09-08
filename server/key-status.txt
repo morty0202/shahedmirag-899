@@ -1,0 +1,28 @@
+﻿HTTP: 200
+{
+  "data": {
+    "label": "sk-or-v1-9e2...c69",
+    "is_management_key": false,
+    "is_provisioning_key": false,
+    "limit": null,
+    "limit_reset": null,
+    "limit_remaining": null,
+    "include_byok_in_limit": false,
+    "usage": 0,
+    "usage_daily": 0,
+    "usage_weekly": 0,
+    "usage_monthly": 0,
+    "byok_usage": 0,
+    "byok_usage_daily": 0,
+    "byok_usage_weekly": 0,
+    "byok_usage_monthly": 0,
+    "is_free_tier": true,
+    "expires_at": null,
+    "creator_user_id": "user_3ELXmGq4OER3abk79FOvgToBNxg",
+    "rate_limit": {
+      "requests": -1,
+      "interval": "10s",
+      "note": "This field is deprecated and safe to ignore."
+    }
+  }
+}

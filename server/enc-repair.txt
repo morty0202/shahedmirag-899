@@ -1,0 +1,2 @@
+﻿routes/assistant.mjs: persianChars=0, remainingSuspectPairs=0
+.env: persianChars=0, remainingSuspectPairs=0
