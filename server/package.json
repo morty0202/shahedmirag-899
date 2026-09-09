@@ -6,7 +6,7 @@
     "seed": "node seed.mjs",
     "seed:db": "node seed-db.mjs",
     "start": "node server.mjs",
-    "start:signal": "node index.mjs",
+    "start:signal": "node _standalone-signal.mjs",
     "test": "node _smoke-test.mjs && node _run-signal-test.mjs",
     "test:flow": "node _run-signal-test.mjs"
   },

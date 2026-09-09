@@ -57,8 +57,12 @@ import chatHistoryRoutes from "./routes/chatHistory.mjs";
 
 /* ---- Config ---- */
 
-const PORT = 3001;
+// Render (and most PaaS hosts) inject the listen port via env; fall back to 3001 locally.
+const PORT = Number(process.env.PORT) || 3001;
 const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || "*";
+// Support a comma-separated list of allowed origins, e.g.
+//   ALLOWED_ORIGIN=https://site.pages.dev,https://preview.pages.dev
+const CORS_ORIGINS = ALLOWED_ORIGIN.split(",").map((s) => s.trim()).filter(Boolean);
 const HEARTBEAT_MS = 30_000;
 
 /* ---- Express app ---- */
@@ -66,7 +70,7 @@ const HEARTBEAT_MS = 30_000;
 const app = express();
 
 app.use(cors({
-  origin: ALLOWED_ORIGIN,
+  origin: !CORS_ORIGINS.length || CORS_ORIGINS.includes("*") ? "*" : CORS_ORIGINS,
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["content-type", "authorization"],
 }));

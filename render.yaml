@@ -1,0 +1,30 @@
+# Render Blueprint — pins the production entry to the combined REST + WebSocket
+# server (server/server.mjs). The legacy signaling-only entry (index.mjs) must
+# never serve the API: it has no Express routes and 404s everything except
+# /healthz, /api/auth/login, /api/ice and the /signal WebSocket.
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: shahedmirag-899
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      # Required in production (openssl rand -hex 32): signs the /signal tickets
+      - key: SIGNAL_SECRET
+        sync: false
+      # Frontend origin(s) allowed by CORS — comma-separated, e.g.
+      # https://your-site.pages.dev,https://preview.pages.dev
+      - key: ALLOWED_ORIGIN
+        sync: false
+      # AI assistant (OpenRouter)
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_BASE_URL
+        value: https://openrouter.ai/api/v1
+      - key: OPENAI_MODEL
+        value: nvidia/nemotron-3-super-120b-a12b:free
