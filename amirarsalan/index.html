@@ -1,4 +1,81 @@
-<!doctype html><html lang="fa" dir="rtl"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content"/><meta name="theme-color" content="#f6f3ff"/><script src="./telegram-web-app.js"></script><title>AmirArsalan Anonymous</title>  <script type="module" crossorigin src="./assets/index-DPeITgla.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/react-D-vXKkXw.js">
-  <link rel="stylesheet" crossorigin href="./assets/index-BieLNDvl.css">
-</head><body><div id="root"></div></body></html>
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover,interactive-widget=resizes-content" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f3f3f8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>AmirArsalan · پیام ناشناس</title>
+    <script src="/shahedmirag-899/amirarsalan/telegram-web-app.js"></script>
+    <script>
+      /* Applied before first paint so there is never a wrong-theme flash. */
+      (function () {
+        try {
+          var pref = localStorage.getItem('aa:theme');
+          var dark;
+          if (pref === 'dark') dark = true;
+          else if (pref === 'light') dark = false;
+          else {
+            var tg = window.Telegram && window.Telegram.WebApp;
+            dark =
+              tg && (tg.colorScheme === 'dark' || tg.colorScheme === 'light')
+                ? tg.colorScheme === 'dark'
+                : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          }
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+          if (dark) {
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#06060b');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <style>
+      /* Critical splash: the very first frame already carries the identity. */
+      html { background: #f3f3f8; }
+      html[data-theme='dark'] { background: #06060b; }
+      #root { min-height: 100%; }
+      .boot-splash {
+        position: fixed; inset: 0; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; gap: 18px;
+      }
+      .boot-splash .mark {
+        width: 68px; height: 68px; border-radius: 24px;
+        background: linear-gradient(150deg, #7a68f0, #5a49dd);
+        box-shadow: 0 8px 24px -12px rgba(14, 14, 22, .35);
+      }
+      .boot-splash .dots { display: flex; gap: 6px; }
+      .boot-splash i {
+        width: 6px; height: 6px; border-radius: 50%; background: #8a8a9d;
+        animation: bootPulse 1.15s ease-in-out infinite;
+      }
+      .boot-splash i:nth-child(2) { animation-delay: 0.14s; }
+      .boot-splash i:nth-child(3) { animation-delay: 0.28s; }
+      html[data-theme='dark'] .boot-splash .mark {
+        background: linear-gradient(150deg, #b7abff, #9c8cff);
+      }
+      html[data-theme='dark'] .boot-splash i { background: #6f6e87; }
+      @keyframes bootPulse {
+        0%, 100% { opacity: 0.28; transform: scale(0.8); }
+        45% { opacity: 1; transform: scale(1); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-splash i { animation: none; opacity: 0.6; }
+      }
+    </style>
+    <script type="module" crossorigin src="/shahedmirag-899/amirarsalan/assets/index-4NFt6Z6g.js"></script>
+    <link rel="modulepreload" crossorigin href="/shahedmirag-899/amirarsalan/assets/react-DPIr46qh.js">
+    <link rel="stylesheet" crossorigin href="/shahedmirag-899/amirarsalan/assets/index-dEcM6Hl6.css">
+  </head>
+  <body>
+    <div id="root">
+      <div class="boot-splash">
+        <div class="mark"></div>
+        <div class="dots"><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </body>
+</html>
